@@ -1,0 +1,16 @@
+{% extends 'template.html' %}
+
+{% block content %}
+<h3>Login</h3>
+<hr>
+<div class="alert alert-{{color}}" role="alert">
+    <h3>{{error}}</h3>
+  </div>
+<form method="post" >
+    <label>Email ID</label>
+    <input type="email" class="form-control" name="email" placeholder="email">
+    <label>Password</label>
+    <input type="password" class="form-control" name="password" placeholder="password">
+    <button type="submit" class="btn btn-primary btn-block"> Register </button>
+</form>
+{% endblock %}
