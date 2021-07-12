@@ -1,0 +1,20 @@
+{% extends 'template.html' %}
+
+{% block content %}
+<h3>Signup</h3>
+<hr>
+<div class="alert alert-{{color}}" role="alert">
+    <h3>{{error}}</h3>
+</div>
+<form method="post" >
+    <label>Email ID</label>
+    <input type="email" class="form-control" name="email" placeholder="email">
+    <label>Password</label>
+    <input type="password" class="form-control" name="password" placeholder="password">
+    <button type="submit" class="btn btn-primary btn-block m-2"> Signup </button>
+</form>
+
+Not Yet Registered <a class="m-1" href="/login">Login</a> ?
+<br>
+Return to <a class="m-1" href="/">Home</a> ?
+{% endblock %}
