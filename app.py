@@ -1,41 +1,94 @@
-from flask import Flask, render_template, request, redirect
-from auth import new_user, sign_in
+from flask import Flask, render_template, request, redirect, session, jsonify
+from auth import new_user, Login, get_notes, add_note, remove_note
+import json
 
 app = Flask(__name__)
+app.secret_key='anshflaskapp'
+NOTES=['ansh is agood boy', 'my name is ansh']
 
 @app.route('/')
 def hello():
-    return render_template('index.html')
+    if 'Logged_in' not in session:
+        return render_template('index.html')
+    else:
+        return redirect('/notes')
 
-@app.route('/user')
-def success():
-    return render_template('success.html')
+@app.route('/notes', methods=['GET', 'POST'])
+def notes():
+    if 'Logged_in' in session:
+        if request.method == 'POST':
+            note = request.form['new_note']
+            add_note(session['User_id'],note)
+            number,notes = get_notes(session['User_id'])
+            return render_template('notes.html',number = number,notes = notes)
+        else:
+            number,notes = get_notes(session['User_id'])
+            return render_template('notes.html',number = number,notes = notes)
+    else:
+        return render_template('login.html',color='danger', error='Please Login to Access your Notes')
 
 @app.route('/Signup', methods=['GET', 'POST'])
 def signup():
     if request.method == 'POST':
         email = request.form['email']
         password = request.form['password']
-        call = new_user(email, password)
+
+        if email == '' or password == '':
+            return render_template('signin.html', error='Please Fill all Details')
+
+        if len(password) <6:
+            return render_template('login.html',color='danger', error='Password Should be minimum 6 characters long')
+
+        call, msg = new_user(email, password)
+
         if call == 0:
-            return redirect("/user")
+            session.clear()
+            session['Logged_in'] = email
+            session['User_id'] = msg
+            return render_template('success.html',email=email)
         else:
-            return render_template('signin.html',color='danger', error=call)
+            return render_template('signin.html', error=msg)
     else:
-        return render_template('signin.html',color='success',error='Signin with valid Email ID')
+        if 'Logged_in' not in session:
+            return render_template('signin.html',error='')
+        else:
+            return redirect('/notes')
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
         email = request.form['email']
         password = request.form['password']
-        call = sign_in(email, password)
+
+        if email == '' or password == '':
+            return render_template('login.html',color='danger', error='Please Fill all Details')
+
+        call, msg = Login(email, password)
+
         if call == 0:
-            return redirect("/user")
+            session.clear()
+            session['Logged_in'] = email
+            session['User_id'] = msg
+            return redirect("/notes")
         else:
-            return render_template('login.html',color='danger', error=call)
+            return render_template('login.html', error=msg)
     else:
-        return render_template('login.html',color='success', error='Login with valid Email ID')
+        if 'Logged_in' not in session:
+            return render_template('login.html', error='')
+        else:
+            return redirect('/notes')
+
+@app.route('/delete-note', methods=['POST'])
+def delete_note():
+    note = json.loads(request.data)
+    remove_note(session['User_id'], note['noteid'])
+    return jsonify({})
+
+@app.route('/logout', methods=['POST'])
+def logout():
+    session.clear()
+    session['Logged_out'] = 'ok'
+    return jsonify({})
 
 def error404(e):
     return render_template('404.html')

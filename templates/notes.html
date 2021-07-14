@@ -1,0 +1,36 @@
+{% extends 'template.html' %}
+
+{% block Header %}<h3>Your Notes</h3>{% endblock %}
+
+{% block content %}
+<form method="post">
+    <textarea name="new_note" id="note" class="form-control"></textarea>
+    <div align="center" class='m-4'>
+        <button type="submit" class="btn btn-primary">Add note</button>
+    </div>
+</form>
+
+  <div class="alert alert-primary d-flex align-items-center" role="alert">
+    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:"><use xlink:href="#info-fill"/></svg>
+    <div>
+        <strong>You have {{ number }} Notes.</strong>
+    </div>
+  </div>
+
+{% for note in notes %}
+
+<!-- <div class="card m-2 p-2">
+    <div>
+       <strong> {{ notes[note] }} </strong>
+    </div>
+    <div >ok</div>
+</div> -->
+
+<div class="alert alert-dark alert-dismissible fade show" role="alert">
+    <strong>{{ notes[note] }}</strong>
+    <button type="button" onclick="deletenote('{{ note }}')" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+
+{% endfor %}
+
+{% endblock %}

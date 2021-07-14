@@ -1,9 +1,9 @@
 {% extends 'template.html' %}
 
+{% block Header %}<h3>Something Broke</h3>{% endblock %}
+
 {% block content %}
-<h3>Something Broke</h3>
-<hr>
 <div class="alert alert-danger" role="alert">
-    <h3>Error occured, Return to <a href="/">Safety</a></h3>
+    <h3>Unknown Error occured, Return to <a href="/">Safety</a></h3>
 </div>
 {% endblock %}

@@ -1,20 +1,27 @@
 {% extends 'template.html' %}
 
+{% block Header %}<h3>Login</h3>{% endblock %}
+
 {% block content %}
-<h3>Login</h3>
-<hr>
-<div class="alert alert-{{color}}" role="alert">
-    <h3>{{error}}</h3>
-  </div>
-<form method="post" >
-    <label>Email ID</label>
+
+{% if error != '' %}
+<div class="alert alert-danger d-flex align-items-center" role="alert">
+    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+    <div>
+        {{ error }}
+    </div>
+</div>
+{% endif %}
+
+<form action="/login" method="post" >
+    <label class="m-2">Email ID</label>
     <input type="email" class="form-control" name="email" placeholder="email">
-    <label>Password</label>
+    <label class="m-2">Password</label>
     <input type="password" class="form-control" name="password" placeholder="password">
-    <button type="submit" class="btn btn-primary btn-block m-2"> Register </button>
+    <button type="submit" class="btn btn-primary btn-block m-2"> Login </button>
 </form>
 
-Already Registered <a class="m-1" href="/Signup">Signup</a> ?
+Not yet <a class="m-1" href="/Signup">Registered</a> ?
 <br>
 Return to <a class="m-1" href="/">Home</a> ?
 {% endblock %}

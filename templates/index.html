@@ -1,9 +1,23 @@
 {% extends 'template.html' %}
+
+{% block Header %}<h5>Start binding your ideas into notes. Register for free 👇👇👇</h5>{% endblock %}
+
 {% block content %}
-<h3 class="text-center">Welcome</h3>
-<hr>
+
+{% if 'Logged_out' in session %}
+<div class="alert alert-success d-flex align-items-center" role="alert">
+    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+    <div>
+        Successfully Logged out, Take Care. Bye👋
+    </div>
+  </div>
+{% endif %}
+
+<img src="{{ url_for('static', filename='blogging.svg')}}">
+
 <div class="container d-flex justify-content-around mt-4 pt-4">
     <a class="btn btn-primary" href="/login"><h3>Login</h3></a>
     <a class="btn btn-primary" href="/Signup"><h3>Signup</h3></a>
 </div>
+
 {% endblock %}

@@ -14,27 +14,51 @@ CONFIG = {
 
 firebase = pyrebase.initialize_app(CONFIG)
 auth = firebase.auth()
+db = firebase.database()
+db = firebase.database()
 
 def new_user(email, password):
   try:
-    auth.create_user_with_email_and_password(email, password)
+    user = auth.create_user_with_email_and_password(email, password)
   except requests.HTTPError as e:
     error_json = e.args[1]
     error = json.loads(error_json)['error']['message']
     if error == "EMAIL_EXISTS":
-      return 'Email Already Exists, Try Again'
+      return -1, 'Email Already Exists, Try Again'
+    else:
+      return -1, 'Something Went Wrong'
   else:
-    return 0
+    db.child(user['localId']).set('')
+    return 0, user['localId']
 
-def sign_in(email, password):
+def Login(email, password):
   try:
-    auth.sign_in_with_email_and_password(email, password)
+    user = auth.sign_in_with_email_and_password(email, password)
   except requests.HTTPError as e:
     error_json = e.args[1]
     error = json.loads(error_json)['error']['message']
     if error == "INVALID_EMAIL":
-      return 'Email is not registered, Try again'
+      return -1, 'Email is not registered, Try again'
     else:
-      return 'Wrong Password Try again'
+      return -1,'Wrong Password Try again'
   else:
-    return 0
+    return 0, user['localId']
+
+def get_notes(id):
+  user = db.child(id).get()
+
+  if user.each() is None:
+    return 0, dict()
+
+  notes = dict()
+  for note in user.each():
+    if note.val() != None:
+        notes[note.key()] = note.val()
+
+  return len(notes), notes
+
+def remove_note(id, note):
+  db.child(id).child(note).remove()
+
+def add_note(id, note):
+  db.child(id).push(note)
