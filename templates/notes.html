@@ -13,7 +13,7 @@
   <div class="alert alert-primary d-flex align-items-center" role="alert">
     <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:"><use xlink:href="#info-fill"/></svg>
     <div>
-        <strong>You have {{ number }} Notes.</strong>
+        <strong>You have {{ number }} Notes.</strong> Logged in as {{ session['Logged_in'] }}
     </div>
   </div>
 
@@ -26,8 +26,8 @@
     <div >ok</div>
 </div> -->
 
-<div class="alert alert-dark alert-dismissible fade show" role="alert">
-    <strong>{{ notes[note] }}</strong>
+<div class="alert alert-secondary alert-dismissible fade show text-dark" role="alert">
+    {{ notes[note] }}
     <button type="button" onclick="deletenote('{{ note }}')" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
 

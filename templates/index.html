@@ -1,6 +1,13 @@
 {% extends 'template.html' %}
 
-{% block Header %}<h5>Start binding your ideas into notes. Register for free 👇👇👇</h5>{% endblock %}
+{% block Header %}<h4>Register for free 👉</h4>
+
+<div class="d-flex justify-content-around align-items-center">
+<a class="btn btn-primary m-1" href="/login"><h4>Login</h4></a>
+<a class="btn btn-primary m-1" href="/Signup"><h4>Signup</h4></a>
+</div>
+
+{% endblock %}
 
 {% block content %}
 
@@ -13,11 +20,12 @@
   </div>
 {% endif %}
 
-<img src="{{ url_for('static', filename='blogging.svg')}}">
+<img id='svg' src="{{ url_for('static', filename='blogging.svg')}}">
 
-<div class="container d-flex justify-content-around mt-4 pt-4">
+<!-- <div class="container d-flex justify-content-around mt-4 pt-4">
     <a class="btn btn-primary" href="/login"><h3>Login</h3></a>
     <a class="btn btn-primary" href="/Signup"><h3>Signup</h3></a>
-</div>
+</div> -->
 
 {% endblock %}
+

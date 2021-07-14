@@ -37,7 +37,7 @@ def Login(email, password):
   except requests.HTTPError as e:
     error_json = e.args[1]
     error = json.loads(error_json)['error']['message']
-    if error == "INVALID_EMAIL":
+    if error == "EMAIL_NOT_FOUND":
       return -1, 'Email is not registered, Try again'
     else:
       return -1,'Wrong Password Try again'

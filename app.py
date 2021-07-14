@@ -18,9 +18,9 @@ def notes():
     if 'Logged_in' in session:
         if request.method == 'POST':
             note = request.form['new_note']
-            add_note(session['User_id'],note)
-            number,notes = get_notes(session['User_id'])
-            return render_template('notes.html',number = number,notes = notes)
+            if note != '':
+                add_note(session['User_id'],note)
+            return redirect('/notes')
         else:
             number,notes = get_notes(session['User_id'])
             return render_template('notes.html',number = number,notes = notes)
@@ -37,7 +37,7 @@ def signup():
             return render_template('signin.html', error='Please Fill all Details')
 
         if len(password) <6:
-            return render_template('login.html',color='danger', error='Password Should be minimum 6 characters long')
+            return render_template('signin.html', error='Password should be at least 6 characters')
 
         call, msg = new_user(email, password)
 
@@ -94,6 +94,7 @@ def error404(e):
     return render_template('404.html')
 
 app.register_error_handler(404, error404)
+app.register_error_handler(405, error404)
 
 if __name__ == '__main__':
     app.run(debug=True)
