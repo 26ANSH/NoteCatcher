@@ -3,8 +3,10 @@ function deletenote(noteid){
         method: "POST",
         body: JSON.stringify({noteid: noteid}),
     }).then((_res) => {
-        window.location.href = "/notes";
-    });
+        var num = document.getElementById('note-num')
+        current = num.innerHTML
+        num.innerHTML = current  - 1
+});
 }
 
 function logout(){
