@@ -11,7 +11,7 @@ function note_update(color, text){
     document.getElementById('note-updates').innerHTML = `<div class="alert alert-${color} alert-dismissible fade show" role="alert">
     ${text}
     <button type="button" class="btn-close" data-bs-dismiss="alert" style="font-size:2vh;" aria-label="Close"></button>
-  </div>` + document.getElementById('note-updates').innerHTML
+  </div>`
 }
 
 function deletenote(noteid) {
