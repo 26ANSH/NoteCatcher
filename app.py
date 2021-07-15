@@ -16,14 +16,8 @@ def hello():
 @app.route('/notes', methods=['GET', 'POST'])
 def notes():
     if 'Logged_in' in session:
-        if request.method == 'POST':
-            note = request.form['new_note']
-            if note != '':
-                add_note(session['User_id'],note)
-            return redirect('/notes')
-        else:
-            number,notes = get_notes(session['User_id'])
-            return render_template('notes.html',number = number,notes = notes)
+        number,notes = get_notes(session['User_id'])
+        return render_template('notes.html',number = number,notes = notes)
     else:
         return render_template('login.html',color='danger', error='Please Login to Access your Notes')
 
@@ -83,6 +77,13 @@ def delete_note():
     note = json.loads(request.data)
     remove_note(session['User_id'], note['noteid'])
     return jsonify({})
+
+@app.route('/add-note', methods=['POST'])
+def add_notes():
+    note = json.loads(request.data)
+    print(note['note_data'])
+    id = add_note(session['User_id'], note['note_data'])
+    return jsonify({'noteid':id})
 
 @app.route('/logout', methods=['POST'])
 def logout():

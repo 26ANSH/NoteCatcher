@@ -3,34 +3,34 @@
 {% block Header %}<h3>Your Notes</h3>{% endblock %}
 
 {% block content %}
-<form method="post">
-    <textarea name="new_note" id="note" class="form-control"></textarea>
-    <div align="center" class='m-4'>
-        <button type="submit" class="btn btn-primary">Add note</button>
-    </div>
-</form>
 
-  <div class="alert alert-primary d-flex align-items-center" role="alert">
-    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:"><use xlink:href="#info-fill"/></svg>
-    <div>
-        You have <strong id="note-num">{{ number }}</strong> Notes. Logged in as <strong>{{ session['Logged_in'] }}</strong>
-    </div>
+
+<div class="form">
+  <textarea id="new_note" class="form-control"></textarea>
+<div align="center" class='m-4'>
+<button class="btn btn-primary" onclick="newnote()" >Add note</button>
+</div>
+</div>
+
+
+<div class="alert alert-primary d-flex align-items-center" role="alert">
+  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:">
+    <use xlink:href="#info-fill" />
+  </svg>
+  <div>
+    You have <strong id="note-num">{{ number }}</strong> Notes. Logged in as <strong>{{ session['Logged_in'] }}</strong>
   </div>
+</div>
 
-{% for note in notes %}
 
-<!-- <div class="card m-2 p-2">
-    <div>
-       <strong> {{ notes[note] }} </strong>
-    </div>
-    <div >ok</div>
-</div> -->
-
-<div class="alert alert-secondary alert-dismissible fade show text-dark" role="alert">
+<div id="notes_section">
+  {% for note in notes %}
+  <div class="alert alert-secondary alert-dismissible fade show text-dark" role="alert">
     {{ notes[note] }}
-    <button type="button" onclick="deletenote('{{ note }}')" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    <button type="button" onclick="deletenote('{{ note }}')" class="btn-close" data-bs-dismiss="alert"
+      aria-label="Close"></button>
   </div>
-
-{% endfor %}
+  {% endfor %}
+</div>
 
 {% endblock %}

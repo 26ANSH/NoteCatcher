@@ -61,4 +61,5 @@ def remove_note(id, note):
   db.child(id).child(note).remove()
 
 def add_note(id, note):
-  db.child(id).push(note)
+  noteid = db.child(id).push(note)
+  return noteid['name']
