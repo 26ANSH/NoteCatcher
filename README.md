@@ -105,5 +105,7 @@ python3 app.py
 ### Future Plans
 
 -> Upgrading this app to a custom UI without the Bootstrap ~ Vanilla CSS.
+
 -> A Faster Backend with more features like Email Verfifivation, Calender Support, custom notifications, improved privacy, UI themes, Team notes and much more.
+
 -> Transforming backend from Flask To maybe MERN or Django
