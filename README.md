@@ -1,13 +1,43 @@
 # FireCatchers
 This Repo Consists of Solutions to Tasks for the FireQuest Organised by GDG Chandigarh and IEEE CU
 
-# Project directory layout
+## Project directory layout
+
     .
-    ├── app.py                    # Main code Runner Python Code
+    ├── app.py                # Main App ~ Flask App
+    ├── auth.py               # Database Communicator ~ Firebase Authentication  
+    ├── template              # Html Pages ~ Jinja Templates
+    │   ├── index.html
+    │   ├── login.html
+    │   ├── signup.html
+    │   ├── 404.html
+    │   ├── template.html
+    │   └── success.html
+    │ 
+    ├── static               # Images, CSS, JS
+    │   ├── style.css
+    │   ├── SVG/Images
+    │   └── script.js
+    │
+    ├── requiremnts.txt      # Python Modules required for running the App
     └── README.md
 
+#### Live Demo
 
-## Given Task
-Use a Firebase service (Firebase Auth) and build a Login and Registration page using it. Participants are free to make any application be its an Android application, Web Page, or anything else.
+[NoteCatcher](https://notes.whoisansh.tech). `Azure App Service`
 
-The program should be modular. and you can use any programming language and any framework.
+Hosted usign Azure's App Service
+* Flask App
+* Firebase Authentication
+* Firebase Real-Time Database
+
+## App Demo
+
+1. Index ![Main Page](/ss for readme/index.png)
+2. Login/signup ![Main Page](/ss for readme/login.png)
+3. Notes ![Main Page](/ss for readme/notes.png)
+4. Adding and Deleting Notes With Notifications ![Main Page](/ss for readme/notifications-1.png) ![Main Page](/ss for readme/delete.png)
+5. Logout ![Main Page](/ss for readme/logout.png)
+6. Error Handling ![Main Page](/ss for readme/404.png)
+
+
