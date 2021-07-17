@@ -22,7 +22,7 @@ This Repo Consists of Solutions to Tasks for the FireQuest Organised by GDG Chan
     ├── requiremnts.txt      # Python Modules required for running the App
     └── README.md
 
-#### Live Demo
+## Live Demo
 
 [NoteCatcher](https://notes.whoisansh.tech). `Azure App Service`
 
@@ -31,22 +31,70 @@ Hosted usign Azure's App Service
 * Firebase Authentication
 * Firebase Real-Time Database
 
-## App Demo
+## How to Run
+
+After Cloning the Code Files on Your PC
+
+> CD NoteCatcher to set current directory
+
+Now Follow These Steps !!!
+
+1. Installing Python Requirements
+
+Install all modules one by one
+``` 
+pip3 install 'module'
+```
+
+OR
+
+Install all modules specified in requirements.txt
+``` 
+pip3 install -r requirements.txt
+```
+2. adding your Configurations in auth.py
+
+* Go to [Firebase](https://console.firebase.google.com/project/) `Login Required` 
+* Create a Project
+* Create a Web App  
+
+<img src="/screenshots/fb/fb-add-app.png" alt="drawing" width="200"/>
+
+* Register your App and Copy Config Details to Your [auth.py](https://github.com/26ANSH/NoteCatcher/blob/main/auth.py) `Paste it here in " " `
+* enable Authenticate from Firebase Authentication
+
+3. You are All Set up
+
+```
+python3 app.py
+```
+
+#### App Demo
 
 1. Index 
 
 <img src="/screenshots/index.png" alt="drawing" width="200"/>
 
 2. Login/signup 
-![Main Page](/ss for readme/login.png)
+
+<img src="/screenshots/login.png" alt="drawing" width="200"/>
+
 3. Notes 
-![Main Page](/ss for readme/notes.png)
+
+<img src="/screenshots/notes.png" alt="drawing" width="200"/>
+
 4. Adding and Deleting Notes With Notifications 
-![Main Page](/ss for readme/notifications-1.png) 
-![Main Page](/ss for readme/delete.png)
+
+<img src="/screenshots/add.png" alt="drawing" width="200"/>
+
+<img src="/screenshots/delete.png" alt="drawing" width="200"/>
+
 5. Logout 
-![Main Page](/ss for readme/logout.png)
+
+<img src="/screenshots/logout.png" alt="drawing" width="200"/>
+
 6. Error Handling 
-![Main Page](/ss for readme/404.png)
+
+<img src="/screenshots/404.png" alt="drawing" width="200"/>
 
 
