@@ -1,5 +1,7 @@
-# FireCatchers
-This Repo Consists of Solutions to Tasks for the FireQuest Organised by GDG Chandigarh and IEEE CU
+# NoteCatcher 📝
+NoteCatcher, is a dynamic website for notes.
+Add your notes and never forget anything, Delete them when your task is over.
+It's a flask app connected to Firebase Real-Time Database.
 
 ## Project directory layout
 
@@ -22,7 +24,7 @@ This Repo Consists of Solutions to Tasks for the FireQuest Organised by GDG Chan
     ├── requiremnts.txt      # Python Modules required for running the App
     └── README.md
 
-## Live Demo
+## Live
 
 [NoteCatcher](https://notes.whoisansh.tech). `Azure App Service`
 
@@ -41,9 +43,10 @@ Now Follow These Steps !!!
 
 1. Installing Python Requirements
 
-Install all modules one by one
+Install all modules by replacing `<module>`
+
 ``` 
-pip3 install 'module'
+pip3 install <module>
 ```
 
 OR
@@ -69,7 +72,7 @@ pip3 install -r requirements.txt
 python3 app.py
 ```
 
-#### App Demo
+## App Demo
 
 1. Index 
 
@@ -97,4 +100,8 @@ python3 app.py
 
 <img src="/screenshots/404.png" alt="drawing" width="300"/>
 
+### Future Plans
 
+-> Upgrading this app to a custom UI without the Bootstrap ~ Vanilla CSS.
+-> A Faster Backend with more features like Email Verfifivation, Calender Support, custom notifications, improved privacy, UI themes, Team notes and much more.
+-> Transforming backend from Flask To maybe MERN or Django
