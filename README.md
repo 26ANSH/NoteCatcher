@@ -58,7 +58,7 @@ pip3 install -r requirements.txt
 * Create a Project
 * Create a Web App  
 
-<img src="/screenshots/fb/fb-add-app.png" alt="drawing" width="200"/>
+<img src="/screenshots/fb/fb-add-app.png" alt="drawing" width="300"/>
 
 * Register your App and Copy Config Details to Your [auth.py](https://github.com/26ANSH/NoteCatcher/blob/main/auth.py) `Paste it here in " " `
 * enable Authenticate from Firebase Authentication
@@ -73,28 +73,28 @@ python3 app.py
 
 1. Index 
 
-<img src="/screenshots/index.png" alt="drawing" width="200"/>
+<img src="/screenshots/index.png" alt="drawing" width="300"/>
 
 2. Login/signup 
 
-<img src="/screenshots/login.png" alt="drawing" width="200"/>
+<img src="/screenshots/login.png" alt="drawing" width="300"/>
 
 3. Notes 
 
-<img src="/screenshots/notes.png" alt="drawing" width="200"/>
+<img src="/screenshots/notes.png" alt="drawing" width="300"/>
 
 4. Adding and Deleting Notes With Notifications 
 
-<img src="/screenshots/add.png" alt="drawing" width="200"/>
+<img src="/screenshots/add.png" alt="drawing" width="300"/>
 
-<img src="/screenshots/delete.png" alt="drawing" width="200"/>
+<img src="/screenshots/delete.png" alt="drawing" width="300"/>
 
 5. Logout 
 
-<img src="/screenshots/logout.png" alt="drawing" width="200"/>
+<img src="/screenshots/logout.png" alt="drawing" width="300"/>
 
 6. Error Handling 
 
-<img src="/screenshots/404.png" alt="drawing" width="200"/>
+<img src="/screenshots/404.png" alt="drawing" width="300"/>
 
 
