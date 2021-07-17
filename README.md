@@ -33,7 +33,7 @@ Hosted usign Azure's App Service
 
 ## App Demo
 
-1. Index ![Main Page](/ss for readme/index.png)
+1. Index ![Main Page](./ss for readme/index.png)
 2. Login/signup ![Main Page](/ss for readme/login.png)
 3. Notes ![Main Page](/ss for readme/notes.png)
 4. Adding and Deleting Notes With Notifications ![Main Page](/ss for readme/notifications-1.png) ![Main Page](/ss for readme/delete.png)
