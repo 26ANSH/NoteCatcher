@@ -3,8 +3,7 @@ from auth import new_user, Login, get_notes, add_note, remove_note
 import json
 
 app = Flask(__name__)
-app.secret_key='anshflaskapp'
-NOTES=['ansh is agood boy', 'my name is ansh']
+app.secret_key='put_anything _that_you_want'
 
 @app.route('/')
 def hello():
@@ -96,6 +95,7 @@ def error404(e):
 
 app.register_error_handler(404, error404)
 app.register_error_handler(405, error404)
+app.register_error_handler(500, error404)
 
 if __name__ == '__main__':
     app.run(debug=True)
