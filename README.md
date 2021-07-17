@@ -34,7 +34,9 @@ Hosted usign Azure's App Service
 ## App Demo
 
 1. Index 
-![Index Page](/screenshots/index.png)
+
+<img src="/screenshots/index.png" alt="drawing" width="200"/>
+
 2. Login/signup 
 ![Main Page](/ss for readme/login.png)
 3. Notes 
