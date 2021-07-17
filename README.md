@@ -1,6 +1,8 @@
 # NoteCatcher 📝
 NoteCatcher, is a dynamic website for notes.
+
 Add your notes and never forget anything, Delete them when your task is over.
+
 It's a flask app connected to Firebase Real-Time Database.
 
 ## Project directory layout
