@@ -5,6 +5,8 @@ Add your notes and never forget anything, Delete them when your task is over.
 
 It's a flask app connected to Firebase Real-Time Database.
 
+Hosted on Azure App Service
+
 ## Project directory layout
 
     .
@@ -44,15 +46,11 @@ After Cloning the Code Files on Your PC
 Now Follow These Steps !!!
 
 1. Installing Python Requirements
-
 Install all modules by replacing `<module>`
-
 ``` 
 pip3 install <module>
 ```
-
 OR
-
 Install all modules specified in requirements.txt
 ``` 
 pip3 install -r requirements.txt
@@ -62,44 +60,39 @@ pip3 install -r requirements.txt
 * Go to [Firebase](https://console.firebase.google.com/project/) `Login Required` 
 * Create a Project
 * Create a Web App  
-
 <img src="/screenshots/fb/fb-add-app.png" alt="drawing" width="300"/>
 
 * Register your App and Copy Config Details to Your [auth.py](https://github.com/26ANSH/NoteCatcher/blob/main/auth.py) `Paste it here in " " `
+<img src="/screenshots/fb/fb-app.png" alt="drawing" width="300"/>
+<img src="/screenshots/fb/fb-config.png" alt="drawing" width="300"/>
+
 * enable Authenticate from Firebase Authentication
+<img src="/screenshots/fb/fb-enable-auth.png" alt="drawing" width="300"/>
 
-3. You are All Set up
-
+3. You are All Set up to Strt your App
 ```
 python3 app.py
 ```
 
 ## App Demo
 
-1. Index 
-
+1. Landing Page
 <img src="/screenshots/index.png" alt="drawing" width="300"/>
 
-2. Login/signup 
-
+2. Login/signup ~ Unique Email id linked to Firebase Auth
 <img src="/screenshots/login.png" alt="drawing" width="300"/>
 
-3. Notes 
-
+3. Notes ~ Linked to Firebase Realtime Databse
 <img src="/screenshots/notes.png" alt="drawing" width="300"/>
 
 4. Adding and Deleting Notes With Notifications 
-
 <img src="/screenshots/add.png" alt="drawing" width="300"/>
-
 <img src="/screenshots/delete.png" alt="drawing" width="300"/>
 
-5. Logout 
-
+5. Logout ~ once looged in/logged out the app remembers it
 <img src="/screenshots/logout.png" alt="drawing" width="300"/>
 
 6. Error Handling 
-
 <img src="/screenshots/404.png" alt="drawing" width="300"/>
 
 ### Future Plans
