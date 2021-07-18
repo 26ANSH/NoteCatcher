@@ -42,7 +42,9 @@ Hosted usign Azure's App Service
 After Cloning the Code Files on Your PC
 
 Change current directory in the command prompt / Terminal
-```cd NoteCatcher```
+```
+cd NoteCatcher
+```
 
 Now Follow These Steps !!!
 
