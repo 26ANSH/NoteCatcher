@@ -41,16 +41,19 @@ Hosted usign Azure's App Service
 
 After Cloning the Code Files on Your PC
 
-> CD NoteCatcher to set current directory
+Change current directory in the command prompt / Terminal
+```cd NoteCatcher```
 
 Now Follow These Steps !!!
 
 1. Installing Python Requirements
+
 Install all modules by replacing `<module>`
 ``` 
 pip3 install <module>
 ```
 OR
+
 Install all modules specified in requirements.txt
 ``` 
 pip3 install -r requirements.txt
@@ -68,6 +71,8 @@ pip3 install -r requirements.txt
 
 * enable Authenticate from Firebase Authentication
 <img src="/screenshots/fb/fb-enable-auth.png" alt="drawing" width="300"/>
+
+* GoTo Firebase Realtime Database and add a Database for your app
 
 3. You are All Set up to Strt your App
 ```
